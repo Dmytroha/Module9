@@ -1,53 +1,57 @@
 package task1;
 
-public class MyArrayList {
-    private Object[] data;  // array for storing data
-    private int size;       // size of collection
+public class MyArrayList<E>{
+    private final int CLUSTER_SIZE=10;
 
+    private Object[] storage;  // array for storing data
+    private int sizeOfCollection; // size of collection (how many elements in storage)
+    //    constructor
     public MyArrayList() {
-        data = new Object[10]; // create initial array of Objects - 10 элементов
-        size = 0;
+        storage = new Object[CLUSTER_SIZE]; // create initial array of Objects
+        sizeOfCollection = 0;
     }
 
     // append element
-    public void add(Object value) {
-        if (size == data.length) {
-            // если массив заполнен, увеличиваем его размер в 2 раза
-            Object[] newData = new Object[data.length * 2];
-            System.arraycopy(data, 0, newData, 0, data.length);
-            data = newData;
+    public void add(E value) {
+        if (sizeOfCollection == storage.length) { // if not enough of room in storage
+            // enlarge storage
+            Object[] newStorage = new Object[storage.length + CLUSTER_SIZE];
+            System.arraycopy(storage, 0, newStorage, 0, storage.length);
+            storage = newStorage;
         }
-        data[size++] = value;
+        storage[sizeOfCollection] = value;
+        sizeOfCollection++;
     }
 
     // remove element by index
     public void remove(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        if (index < 0 || index >= sizeOfCollection) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + sizeOfCollection);
         }
-        // shift elemets for 1
-        System.arraycopy(data, index + 1, data, index, size - index - 1);
-        data[--size] = null;  // освобождаем последний элемент массива
+        // shift elements for 1
+        System.arraycopy(storage, index + 1, storage, index, sizeOfCollection - (index+1));
+        sizeOfCollection--;
+        storage[sizeOfCollection] = null;  // erase last element
     }
 
     // cleaning collection
     public void clear() {
-        for (int i = 0; i < size; i++) {
-            data[i] = null;
+        for (int i = 0; i < sizeOfCollection; i++) {
+            storage[i] = null;
         }
-        size = 0;
+        sizeOfCollection = 0;
     }
 
     // return size of collection
     public int size() {
-        return size;
+        return sizeOfCollection;
     }
 
     // return element
-    public Object get(int index) {
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+    public E get(int index) {
+        if (index < 0 || index >= sizeOfCollection) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + sizeOfCollection);
         }
-        return data[index];
+        return (E) storage[index]; // correct type cast not guarantied in this case "but I try"
     }
 }
