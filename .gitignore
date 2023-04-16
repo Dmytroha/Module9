@@ -18,6 +18,11 @@
 *.zip
 *.tar.gz
 *.rar
+*.idea
+*.iws
+*.iml
+*.ipr
+target
 
 .idea
 .iws
