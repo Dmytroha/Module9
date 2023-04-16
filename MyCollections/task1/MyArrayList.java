@@ -4,7 +4,7 @@ public class MyArrayList<E>{
     private final int CLUSTER_SIZE=10;
 
     private Object[] storage;  // array for storing data
-    private int sizeOfCollection; // size of collection (how many elements in storage)
+    private int sizeOfCollection; // size of collection (how many elements in the storage)
     //    constructor
     public MyArrayList() {
         storage = new Object[CLUSTER_SIZE]; // create initial array of Objects
