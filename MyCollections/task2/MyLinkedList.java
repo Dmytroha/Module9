@@ -2,6 +2,7 @@ package task2;
 
 public class MyLinkedList<E> {
 
+  
     private Object prev;
     private Object next;
 
