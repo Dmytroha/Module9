@@ -1,6 +1,24 @@
 package task2;
 
-public class MyLinkedList {
+public class MyLinkedList<E> {
+
+    private Object prev;
+    private Object next;
+
+    public add(E value){
+
+    }
+    public void remove(int index){
+
+
+    }
+    public void clear(){
+
+    }
+
+    public E get(int index){
+
+    }
 
 
 }
