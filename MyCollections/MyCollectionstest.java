@@ -1,5 +1,6 @@
 import task1.MyArrayList;
 import task2.MyLinkedList;
+import task3.MyHashMap;
 
 public class MyCollectionstest {
     public static void main(String[] args) {
@@ -40,7 +41,7 @@ public class MyCollectionstest {
         System.out.println(someLinkedList.get(1).toString()+'\n'+"size:"+someLinkedList.size());
 
         someLinkedList.remove(1);
-        System.out.println("After removing element with index 1 "+someLinkedList.get(1).toString()+"bocome Second"+'\n'+"size:"+someLinkedList.size());
+        System.out.println("After removing element with index 1 "+someLinkedList.get(1).toString()+"become Second"+'\n'+"size:"+someLinkedList.size());
         someLinkedList.clear();
         System.out.println("Size after clear(): "+someLinkedList.size());
 
