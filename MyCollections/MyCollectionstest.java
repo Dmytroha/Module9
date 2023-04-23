@@ -84,22 +84,13 @@ public class MyCollectionstest {
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(5));
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(86719));
 
-
-
-
-
-
-
-
-
-
     }
 }
 
 class ObjectForTestCollections{
-    private int aInt;
-    private float aFloat;
-    private String someString;
+    private final int aInt;
+    private final float aFloat;
+    private final String someString;
 
     public ObjectForTestCollections(int aInt, float aFloat, String someString) {
         this.aInt = aInt;
