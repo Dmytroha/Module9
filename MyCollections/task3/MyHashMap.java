@@ -22,7 +22,7 @@ public class MyHashMap<K, V> {
      */
 
     private static class Node<K, V> {
-        private final K key;
+        private final K key; // creates ones and never changes
         private V value;
         private Node<K, V> next;
 

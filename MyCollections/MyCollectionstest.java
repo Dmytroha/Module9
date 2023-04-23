@@ -52,6 +52,44 @@ public class MyCollectionstest {
             System.out.println("Index Out Of Bounds Exception");
         }
 
+// testing MyHashMap class
+
+        MyHashMap<Integer, String> myHashMapOfIdNamePairs = new MyHashMap<>();
+        //put elements to MyHashMap
+        System.out.println("\n Testing MyHashMAp class\n");
+        myHashMapOfIdNamePairs.put(35627,"Porshe Carrera GT");
+        myHashMapOfIdNamePairs.put(67382,"Alfa Romeo Gulia");
+        myHashMapOfIdNamePairs.put(72832,"VW Jetta");
+        myHashMapOfIdNamePairs.put(86719,"Ford F150");
+        myHashMapOfIdNamePairs.put(243,"Tesla");
+        myHashMapOfIdNamePairs.put(72832,"Subaru Impreza");
+        System.out.println("Size of myHashMapOfIdNamePairs:"+myHashMapOfIdNamePairs.size()); // print size
+        // testing get method
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(35627));
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(72832));
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(5));
+        // put elment with existing key
+        //print before
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(86719));
+        myHashMapOfIdNamePairs.put(86719,"Mitsubishi Lancer");
+        //print after
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(86719));
+        System.out.println("test clear() method");
+        myHashMapOfIdNamePairs.clear();
+
+        System.out.println("Size of myHashMapOfIdNamePairs:"+myHashMapOfIdNamePairs.size()); // print size
+
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(35627));
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(72832));
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(5));
+        System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(86719));
+
+
+
+
+
+
+
 
 
 
