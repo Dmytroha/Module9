@@ -22,7 +22,7 @@ public class MyQueue<T>{
      */
     public void add(T value) {
         Node<T> newNode = new Node<>(value); // create node
-        if (tail != null) { // queue is not empty 
+        if (tail != null) { // queue is not empty
             tail.next = newNode;
         }
         tail = newNode;
@@ -80,6 +80,10 @@ public class MyQueue<T>{
         return item;
     }
 
+    /**
+     * Constructor of Node class
+     * @param <T>
+     */
     private static class Node<T> {
         private T value;
         private Node<T> next;

@@ -1,6 +1,9 @@
 import task1.MyArrayList;
 import task2.MyLinkedList;
+import task3.MyQueue;
 import task5.MyHashMap;
+
+import java.sql.SQLOutput;
 
 public class MyCollectionstest {
     public static void main(String[] args) {
@@ -51,6 +54,35 @@ public class MyCollectionstest {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Index Out Of Bounds Exception");
         }
+        // testing MyQueue Class
+        //create some object to add
+        System.out.println("<---------------Testing MyQueue class----------->");
+        ObjectForTestCollections object1 = new ObjectForTestCollections(1,1.2345f,"First in MyQueue  ");
+        ObjectForTestCollections object2 = new ObjectForTestCollections(2,2.4563f,"Second in  MyQueue");
+        ObjectForTestCollections object3 = new ObjectForTestCollections(3,3.4567f,"Third in  ");
+        ObjectForTestCollections object4 = new ObjectForTestCollections(4,4.5678f,"Forth in  ");
+
+        MyQueue <ObjectForTestCollections> myQueue1 = new MyQueue<>();  // Queue
+        myQueue1.add(object1);
+        myQueue1.add(object2);
+        myQueue1.add(object3);
+        myQueue1.add(object4);
+
+        System.out.println("Peek element "+ myQueue1.peek());
+        System.out.println("Poll element "+ myQueue1.poll());
+        System.out.println("Peek element "+ myQueue1.peek());
+
+        System.out.println("Peek element "+ myQueue1.peek()+"size of queue "+ myQueue1.size());
+        myQueue1.clear();
+        System.out.println("Peek element after clear() "+ myQueue1.peek()+" size of queue "+ myQueue1.size());
+
+
+
+
+
+
+
+
 
 // testing MyHashMap class
 
