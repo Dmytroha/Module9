@@ -1,9 +1,11 @@
 import task1.MyArrayList;
 import task2.MyLinkedList;
 import task3.MyQueue;
+import task4.MyStack;
 import task5.MyHashMap;
 
 import java.sql.SQLOutput;
+import java.util.NoSuchElementException;
 
 public class MyCollectionstest {
     public static void main(String[] args) {
@@ -54,7 +56,7 @@ public class MyCollectionstest {
         } catch (IndexOutOfBoundsException e) {
             System.out.println("Index Out Of Bounds Exception");
         }
-        // testing MyQueue Class
+        // testing ---------------------------MyQueue Class
         //create some object to add
         System.out.println("<---------------Testing MyQueue class----------->");
         ObjectForTestCollections object1 = new ObjectForTestCollections(1,1.2345f,"First in MyQueue  ");
@@ -77,14 +79,46 @@ public class MyCollectionstest {
         System.out.println("Peek element after clear() "+ myQueue1.peek()+" size of queue "+ myQueue1.size());
 
 
+        // testing ----------------------MyStack
+
+        System.out.println("testing ----------------------MyStack");
+        MyStack<ObjectForTestCollections> myStack1 = new MyStack<>();
+
+        myStack1.push(object1);
+        myStack1.push(object2);
+        myStack1.push(object3);
+        System.out.println(myStack1.pop());
+        System.out.println(myStack1.peek());
+        myStack1.push(object4);
+        System.out.println(myStack1.size());
+        myStack1.remove(1);
+        System.out.println(myStack1.size());
+        System.out.println(myStack1.pop());
+        System.out.println(myStack1.pop());
+        try {
+            System.out.println(myStack1.pop()); //
+        }catch (NoSuchElementException e){
+            System.out.println("No such element exception");
+        }
+        System.out.println("Add 3 elements to stack");
+        myStack1.push(object1);
+        myStack1.push(object2);
+        myStack1.push(object3);
+       System.out.println("wait for 5 sec");
+        try{
+        Thread.sleep(5000);
+        }
+        catch(InterruptedException e){
+
+        }
+        System.out.println("Size should be "+myStack1.size());
+        myStack1.clear();
+        System.out.println("After clear() Size should be "+myStack1.size());
 
 
 
 
-
-
-
-// testing MyHashMap class
+        // testing------------------- MyHashMap class
 
         MyHashMap<Integer, String> myHashMapOfIdNamePairs = new MyHashMap<>();
         //put elements to MyHashMap
