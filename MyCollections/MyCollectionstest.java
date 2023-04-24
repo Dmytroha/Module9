@@ -1,6 +1,6 @@
 import task1.MyArrayList;
 import task2.MyLinkedList;
-import task3.MyHashMap;
+import task5.MyHashMap;
 
 public class MyCollectionstest {
     public static void main(String[] args) {
@@ -68,7 +68,7 @@ public class MyCollectionstest {
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(35627));
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(72832));
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(5));
-        // put elment with existing key
+        // put element with existing key
         //print before
         System.out.println("Get Element by key "+myHashMapOfIdNamePairs.get(86719));
         myHashMapOfIdNamePairs.put(86719,"Mitsubishi Lancer");
